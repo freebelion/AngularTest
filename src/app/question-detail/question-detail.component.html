@@ -1,0 +1,11 @@
+<div class="container-fluid que-detail pt-2" *ngIf="displayQuestion">
+  <textarea class="form-control  mb-1" [(ngModel)]="displayQuestion.htmlContent"></textarea>
+  <button type="button" class="btn btn-light btn-sm">
+     <img class="img-fluid" src="assets/btnAddChoice.png" width="15" alt="Add Choice" (click)="displayQuestion.addChoice()"/>
+  </button>
+  <div class="row mt-1 mb-1">
+    <div *ngFor="let cho of displayQuestion.choices; index as i" class="col">
+      <textarea [(ngModel)]="cho.htmlContent"></textarea>
+    </div>
+  </div>
+</div>

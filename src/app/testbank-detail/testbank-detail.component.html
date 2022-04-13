@@ -1,0 +1,32 @@
+<div class="container-fluid tb-detail" *ngIf="displayTestbank">
+  <div class="row border border-btn-outline-secondary rounded">
+    <input type="text" class="form-control" [(ngModel)]="displayTestbank.name"/>
+    <textarea class="form-control" [(ngModel)]="displayTestbank.description" rows="3" *ngIf="displayTestbank">
+
+    </textarea>
+  </div>
+
+  <div class="row border-secondary rounded mt-2">
+    <div class="col-sm-1">
+      <button type="button" class="btn btn-outline-secondary btn-lg float-left">
+        <img class="img-fluid" src="assets/btnAddQuestion.png" width="25" alt="Add Question" (click)="displayTestbank.addQuestion()"/>
+      </button>    
+    </div>
+
+    <div class="col">
+          <app-question-detail [displayQuestion]="displayTestbank.selectedQuestion"></app-question-detail>
+    </div>
+  </div>
+
+  <div class="row border border-secondary rounded mt-2">
+    <div *ngFor="let que of displayTestbank.questions" class="card" (click)="displayTestbank.selectQuestion(que)"
+            [class.selected]="que === displayTestbank.selectedQuestion">
+      <div class="card-body" [innerHTML]="que.htmlContent">
+     
+      </div>
+      <div class="card-footer row">
+        <div *ngFor="let cho of que.choices; index as i" class="col" [innerHTML]="cho.htmlContent"></div>
+      </div>
+    </div>
+  </div>
+</div>
