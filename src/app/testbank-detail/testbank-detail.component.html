@@ -1,5 +1,19 @@
-<div class="container-fluid tb-detail" *ngIf="displayTestbank">
-  <div class="row border border-btn-outline-secondary rounded">
+<div class="container tb-detail" *ngIf="displayTestbank">
+  <div class="row">
+    <nav class="navbar navbar-default mt-1 mb-1">
+      <span class="label">Editing Testbank</span>
+      <button type="button" class="btn btn-light btn-sm border border-dark" (click)="displayTestbank.addQuestion()">
+        <img class="img-fluid" src="assets/btnAddQuestion.png" width="25" alt="Add Question">
+        Add Question
+      </button>
+      <button type="button" class="btn btn-light btn-sm border border-dark" (click)="displayTestbank.deleteQuestion()">
+        <img class="img-fluid" src="assets/btnDeleteQuestion.png" width="25" alt="Delete Question">
+        Delete Question
+      </button>
+    </nav>
+  </div>
+
+  <div class="row border border-primary rounded">
     <input type="text" class="form-control" [(ngModel)]="displayTestbank.name"/>
     <textarea class="form-control" [(ngModel)]="displayTestbank.description" rows="3" *ngIf="displayTestbank">
 
@@ -7,25 +21,17 @@
   </div>
 
   <div class="row border-secondary rounded mt-2">
-    <div class="col-sm-1">
-      <button type="button" class="btn btn-outline-secondary btn-lg float-left">
-        <img class="img-fluid" src="assets/btnAddQuestion.png" width="25" alt="Add Question" (click)="displayTestbank.addQuestion()"/>
-      </button>    
-    </div>
-
-    <div class="col">
-          <app-question-detail [displayQuestion]="displayTestbank.selectedQuestion"></app-question-detail>
-    </div>
+    <app-question-detail [displayQuestion]="displayTestbank.selectedQuestion"></app-question-detail>
   </div>
 
-  <div class="row border border-secondary rounded mt-2">
-    <div *ngFor="let que of displayTestbank.questions" class="card" (click)="displayTestbank.selectQuestion(que)"
+  <div class="row mt-2 mb-2">
+    <div *ngFor="let que of displayTestbank.questions" class="card border border-primary mt-1 mb-1" (click)="displayTestbank.selectQuestion(que)"
             [class.selected]="que === displayTestbank.selectedQuestion">
       <div class="card-body" [innerHTML]="que.htmlContent">
      
       </div>
       <div class="card-footer row">
-        <div *ngFor="let cho of que.choices; index as i" class="col" [innerHTML]="cho.htmlContent"></div>
+        <div *ngFor="let cho of que.choices; index as i" class="{{que.colClass}}" [innerHTML]="cho.htmlContent"></div>
       </div>
     </div>
   </div>

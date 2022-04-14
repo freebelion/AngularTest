@@ -3,20 +3,24 @@
     <h1>{{title}} Uygulaması</h1>
   </div>
   <div class="row">
-    <div class="col-lg-4 border border-primary rounded">
+    <div class="col-lg-4">
 
-      <button type="button" class="btn btn-outline-primary btn-lg m-1 p-0">
-        <img class="img-fluid" src="assets/btnAddTestbank.png" width="50" alt="Add Testbank" (click)="addTestbank()"/>
-      </button>
+      <nav class="navbar navbar-default mt-1 mb-1">
+        <button type="button" class="btn btn-light btn-sm" (click)="addTestbank()">
+          <img class="img-fluid" src="assets/btnAddTestbank.png" width="50" alt="Add Testbank">
+          Add Testbank
+        </button>
+      </nav>
 
-      <div *ngFor="let tb of testbanks" class="card m-1" (click)="selectTestbank(tb)"
+      <div *ngFor="let tb of testbanks" class="card border border-primary mt-1 mb-1" (click)="selectTestbank(tb)"
             [class.selected]="tb === selectedTestbank">
          <div class="card-header"><h2>{{tb.name}}</h2></div>
          <div class="card-body">{{tb.description}}</div>
       </div>
 
     </div>
-    <div class="col-lg-8 border border-primary rounded" *ngIf="selectedTestbank">
+
+    <div class="col-lg-8" *ngIf="selectedTestbank">
       <app-testbank-detail [displayTestbank]="selectedTestbank" displayTestban></app-testbank-detail>
     </div>
   </div>

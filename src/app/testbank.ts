@@ -22,4 +22,14 @@ export class Testbank {
   selectQuestion(que: Question) {
     this.selectedQuestion = que;
   }
+
+  deleteQuestion(que = this.selectedQuestion) {
+    if (que) {
+      let index = this.questions.indexOf(que, 0);
+      if (index > -1) {
+        this.questions.splice(index, 1);
+      }
+      this.selectedQuestion = undefined;
+    }
+  }
 }
