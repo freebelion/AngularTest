@@ -3,9 +3,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>LaunchJsonDebugger</DebuggerFlavor>
     <LaunchJsonTarget>{
-  "type": "edge",
+  "type": "chrome",
   "request": "launch",
-  "name": "localhost (Edge)",
+  "name": "localhost (Chrome)",
   "url": "http://localhost:4200",
   "webRoot": "C:\\Users\\freeb\\source\\repos\\AngularTest"
 }</LaunchJsonTarget>

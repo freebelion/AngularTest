@@ -1,14 +1,18 @@
-<div class="container-fluid">
+<div class="container-fluid app-container">
   <div class="row">
     <h1>{{title}} Uygulaması</h1>
   </div>
   <div class="row">
     <div class="col-lg-4">
 
-      <nav class="navbar navbar-default mt-1 mb-1">
-        <button type="button" class="btn btn-light btn-sm" (click)="addTestbank()">
-          <img class="img-fluid" src="assets/btnAddTestbank.png" width="50" alt="Add Testbank">
+      <nav class="navbar navbar-expand mt-1 mb-1">
+        <button type="button" class="btn btn-light btn-sm m-1" (click)="addTestbank()">
+          <img class="img-fluid" src="assets/btnAddTestbank.png" width="25" alt="Add Testbank">
           Add Testbank
+        </button>
+        <button type="button" class="btn btn-light btn-sm m-1" (click)="deleteTestbank()">
+          <img class="img-fluid" src="assets/btnDeleteTestbank.png" width="25" alt="Delete Testbank">
+          Delete Testbank
         </button>
       </nav>
 

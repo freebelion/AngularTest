@@ -1,12 +1,14 @@
-<div class="container tb-detail" *ngIf="displayTestbank">
+<div class="container-fluid app-container" *ngIf="displayTestbank">
   <div class="row">
-    <nav class="navbar navbar-default mt-1 mb-1">
-      <span class="label">Editing Testbank</span>
-      <button type="button" class="btn btn-light btn-sm border border-dark" (click)="displayTestbank.addQuestion()">
+    <nav class="navbar navbar-expand mt-1 mb-1">
+      <span class="label m-1">Editing Testbank</span>
+      <button type="button" class="btn btn-light btn-sm m-1"
+              (click)="displayTestbank.addQuestion()">
         <img class="img-fluid" src="assets/btnAddQuestion.png" width="25" alt="Add Question">
         Add Question
       </button>
-      <button type="button" class="btn btn-light btn-sm border border-dark" (click)="displayTestbank.deleteQuestion()">
+      <button type="button" class="btn btn-light btn-sm m-1"
+              (click)="displayTestbank.deleteQuestion()">
         <img class="img-fluid" src="assets/btnDeleteQuestion.png" width="25" alt="Delete Question">
         Delete Question
       </button>
@@ -15,12 +17,12 @@
 
   <div class="row border border-primary rounded">
     <input type="text" class="form-control" [(ngModel)]="displayTestbank.name"/>
-    <textarea class="form-control" [(ngModel)]="displayTestbank.description" rows="3" *ngIf="displayTestbank">
+    <textarea class="form-control" [(ngModel)]="displayTestbank.description" rows="3">
 
     </textarea>
   </div>
 
-  <div class="row border-secondary rounded mt-2">
+  <div class="row mt-2 mb-2">
     <app-question-detail [displayQuestion]="displayTestbank.selectedQuestion"></app-question-detail>
   </div>
 

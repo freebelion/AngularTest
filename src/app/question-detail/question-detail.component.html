@@ -1,18 +1,18 @@
-<div class="container-fluid que-detail pt-2" *ngIf="displayQuestion">
-  <nav class="navbar navbar-default mt-1 mb-1">
-    <span class="label">Editing Question</span>
-    <button type="button" class="btn btn-light btn-sm border border-dark" (click)="displayQuestion.addChoice()">
+<div class="container-fluid que-detail" *ngIf="displayQuestion">
+  <nav class="navbar navbar-expand mt-1 mb-1">
+    <span class="label m-1">Editing Question</span>
+    <button type="button" class="btn btn-light btn-sm m-1" (click)="displayQuestion.addChoice()">
       <img class="img-fluid" src="assets/btnAddChoice.png" width="15" alt="Add Choice">
       add choice
     </button>
 
-    <button type="button" class="btn btn-light btn-sm border border-dark" (click)="displayQuestion.deleteChoice()">
+    <button type="button" class="btn btn-light btn-sm m-1" (click)="displayQuestion.deleteChoice()">
       <img class="img-fluid" src="assets/btnDeleteChoice.png" width="15" alt="Add Choice">
       delete choice
     </button>
 
-    <div class="dropdown">
-      <button class="btn btn-light dropdown-toggle border border-dark" type="button" id="dropdown-choiceWidth" data-bs-toggle="dropdown" aria-expanded="false">
+    <div class="dropdown m-1">
+      <button class="btn btn-light dropdown-toggle" type="button" id="dropdown-choiceWidth" data-bs-toggle="dropdown" aria-expanded="false">
         choice width
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdown-choiceWidth">

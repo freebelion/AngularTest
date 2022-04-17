@@ -22,6 +22,16 @@ export class AppComponent {
     this.testbanks.push(new Testbank);
   }
 
+  deleteTestbank(tb = this.selectedTestbank) {
+    if (tb) {
+      let index = this.testbanks.indexOf(tb, 0);
+      if (index > -1) {
+        this.testbanks.splice(index, 1);
+      }
+      this.selectedTestbank = undefined;
+    }
+  }
+
   selectTestbank(tb: Testbank) {
     this.selectedTestbank = tb;
   }
