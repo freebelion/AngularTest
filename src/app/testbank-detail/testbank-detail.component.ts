@@ -11,8 +11,7 @@ import { Question } from '../question';
 export class TestbankDetailComponent implements OnInit {
 
   @Input() displayTestbank: Testbank | undefined;
-  public selectedQuestion: Question | undefined;
-
+  
   constructor() { }
 
   ngOnInit(): void {
